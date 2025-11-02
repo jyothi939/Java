@@ -22,4 +22,10 @@ stages:
         # Checkout code from GitHub
         - task: Checkout@1
           displayName: 'Checkout GitHub Code'
+        - task: Docker@2
+          inputs:
+            containerRegistry: 'Acon1'
+            repository: 'myapp'
+            command: 'buildAndPush'
+            Dockerfile: '**/Dockerfile'
         
