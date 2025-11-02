@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name: vm1
+
+stages:
+
+# -----------------------------
+# Stage 1: Build & Push Docker Image
+# -----------------------------
+- stage: Build
+  displayName: Build and Push Docker Image
+  jobs:
+    - job: Build
+      steps:
+        # Checkout code from GitHub
+        - task: Checkout@1
+          displayName: 'Checkout GitHub Code'
+        
