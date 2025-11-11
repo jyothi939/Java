@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: vm1
+  name: Test
 
 stages:
 
@@ -24,7 +24,7 @@ stages:
           displayName: 'Checkout GitHub Code'
         - task: Docker@2
           inputs:
-            containerRegistry: 'Acon1'
+            containerRegistry: 'con1'
             repository: 'myapp'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
